@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<title>Луксозен апартамент</title>
+
+<!-- Global CSS -->
+<link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">
+    <a href="../index.html" class="logo-link">EliteEstate.bg</a>
+  </div>
+</header>
+
+<div class="property-container">
+
+  <!-- Gallery -->
+  <div class="property-gallery">
+    <img id="mainApartmentImage"
+         src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1"
+         alt="Луксозен апартамент">
+
+    <div class="thumbs">
+      <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"
+           onclick="changeApartmentImage(this.src)">
+      <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511"
+           onclick="changeApartmentImage(this.src)">
+      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
+           onclick="changeApartmentImage(this.src)">
+    </div>
+  </div>
+
+  <!-- Info -->
+  <div class="property-info">
+    <h1>Луксозен апартамент</h1>
+    <p>София</p>
+    <div class="price">250 000 €</div>
+    <p>Модерен апартамент.</p>
+    <a href="#" class="btn-primary">Свържи се с брокер</a>
+  </div>
+
+</div>
+
+<div class="property-tabs">
+  <button class="active">Описание</button>
+  <button>Продажби</button>
+</div>
+
+<div class="property-description-wrapper">
+
+  <div class="property-description">
+    <h2>Описание</h2>
+    <p>Просторен апартамент с панорамна гледка.</p>
+    <p><strong>Код на имота:</strong> 245812</p>
+  </div>
+
+  <div class="property-summary">
+    <p>📍 <strong>Местоположение:</strong> София</p>
+    <p>📐 <strong>Площ:</strong> 110 м²</p>
+    <p>💰 <strong>Цена:</strong> 250 000 €</p>
+  </div>
+
+</div>
+
+<script>
+  function changeApartmentImage(src) {
+    document.getElementById("mainApartmentImage").src = src;
+  }
+</script>
+
+</body>
+</html>

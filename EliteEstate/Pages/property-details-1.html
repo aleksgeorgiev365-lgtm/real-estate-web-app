@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<title>Къща с двор</title>
+
+<!-- Global CSS -->
+<link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">
+    <a href="../index.html" class="logo-link">EliteEstate.bg</a>
+  </div>
+</header>
+
+<div class="property-container">
+
+  <!-- Gallery -->
+  <div class="property-gallery">
+    <img id="mainHouseImage"
+         src="https://images.unsplash.com/photo-1568605114967-8130f3a36994"
+         alt="Къща с двор">
+
+    <div class="thumbs">
+      <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994"
+           onclick="changeHouseImage(this.src)">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+           onclick="changeHouseImage(this.src)">
+      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d"
+           onclick="changeHouseImage(this.src)">
+      <img src="https://images.unsplash.com/photo-1600585154207-7c7a3f74f39c"
+           onclick="changeHouseImage(this.src)">
+    </div>
+  </div>
+
+  <!-- Info -->
+  <div class="property-info">
+    <h1>Къща с двор</h1>
+    <p>Пловдив</p>
+    <div class="price">320 000 €</div>
+    <p>Луксозен имот с двор.</p>
+    <a href="#" class="btn-primary">Свържи се с брокер</a>
+  </div>
+
+</div>
+
+<div class="property-tabs">
+  <button class="active">Описание</button>
+  <button>Продажби</button>
+</div>
+
+<div class="property-description-wrapper">
+
+  <div class="property-description">
+    <h2>Описание</h2>
+    <p>Просторна къща с модерна архитектура и двор.</p>
+    <p><strong>Код на имота:</strong> 132495</p>
+  </div>
+
+  <div class="property-summary">
+    <p>📍 <strong>Местоположение:</strong> Пловдив</p>
+    <p>📐 <strong>Площ:</strong> 120 м²</p>
+    <p>💰 <strong>Цена:</strong> 320 000 €</p>
+  </div>
+
+</div>
+
+<script>
+  function changeHouseImage(src) {
+    document.getElementById("mainHouseImage").src = src;
+  }
+</script>
+
+</body>
+</html>

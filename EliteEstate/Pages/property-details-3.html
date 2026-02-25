@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<title>Модерен офис</title>
+
+<!-- Global CSS -->
+<link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">
+    <a href="../index.html" class="logo-link">EliteEstate.bg</a>
+  </div>
+</header>
+
+<div class="property-container">
+
+  <!-- Gallery -->
+  <div class="property-gallery">
+    <img id="mainOfficeImage"
+         src="https://images.unsplash.com/photo-1497366216548-37526070297c"
+         alt="Модерен офис">
+
+    <div class="thumbs">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+           onclick="changeOfficeImage(this.src)">
+      <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36"
+           onclick="changeOfficeImage(this.src)">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+           onclick="changeOfficeImage(this.src)">
+    </div>
+  </div>
+
+  <!-- Info -->
+  <div class="property-info">
+    <h1>Модерен офис</h1>
+    <p>София</p>
+    <div class="price">180 000 €</div>
+    <p>Бизнес имот.</p>
+    <a href="#" class="btn-primary">Свържи се с брокер</a>
+  </div>
+
+</div>
+
+<div class="property-tabs">
+  <button class="active">Описание</button>
+  <button>Продажби</button>
+</div>
+
+<div class="property-description-wrapper">
+
+  <div class="property-description">
+    <h2>Описание</h2>
+    <p>Офис пространство с отлична локация.</p>
+    <p><strong>Код на имота:</strong> 884120</p>
+  </div>
+
+  <div class="property-summary">
+    <p>📍 <strong>Местоположение:</strong> София</p>
+    <p>📐 <strong>Площ:</strong> 140 м²</p>
+    <p>💰 <strong>Цена:</strong> 180 000 €</p>
+  </div>
+
+</div>
+
+<script>
+  function changeOfficeImage(src) {
+    document.getElementById("mainOfficeImage").src = src;
+  }
+</script>
+
+</body>
+</html>
