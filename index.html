@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Уеб приложение за недвижими имоти</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+<!-- ===== TOP INFO BAR ===== -->
+<div class="top-bar">
+    <p>Еврото е покачило цената на имота ми. <a href="#">Виж с колко →</a></p>
+</div>
+
+<!-- ===== HEADER / NAVIGATION ===== -->
+<header class="header">
+
+    <div class="logo">
+        <a href="index.html" class="logo-link">EliteEstate.bg</a>
+    </div>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Начало</a></li>
+            <li><a href="Pages/client-profile.html">Клиент</a></li>
+            <li><a href="Pages/broker-profile.html">Брокер</a></li>
+            <li><a href="Pages/login.html">Вход</a></li>
+            <li><a href="Pages/register.html">Регистрация</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-buttons">
+        <a href="Pages/add-property.html" class="btn-post">Обяви имот</a>
+        <span class="language">BG</span>
+    </div>
+
+</header>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+    <div class="hero-wrapper">
+        <div class="hero-card">
+            <h1>НАД 1 МИЛИОН КЛИЕНТИ<br>ОЧАКВАТ ТВОЯ ИМОТ</h1>
+
+            <p>
+                Продай лесно. Предложи го на търг или получи
+                директна оферта от нас.
+            </p>
+
+            <div class="hero-actions">
+                <button>Вземи оферта</button>
+                <button>Обяви имота си</button>
+            </div>
+
+            <!-- SEARCH FORM -->
+            <div class="hero-form">
+                <select id="citySelect">
+                    <option value="">Град</option>
+                </select>
+                
+                <select id="districtSelect" disabled>
+                    <option value="">Квартал</option>
+                </select>
+                  
+              
+                <button type="button" id="searchBtn">Продължи напред</button>
+              </div>
+              
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROPERTIES SECTION ===== -->
+<section class="properties-section">
+
+    <div class="properties-header">
+        <h2>Търси имот</h2>
+        <p>Разгледай актуални предложения по различни критерии</p>
+    </div>
+
+    <div class="properties-grid">
+
+        <div class="property-card">
+            <img src="Images/apartament.png" alt="Имот">
+            <div class="property-info">
+                <h3>Луксозен апартамент</h3>
+                <p>София, Лозенец</p>
+                <span class="price">250 000 €</span>
+                <a href="Pages/property-details-1.html" class="btn-primary">Виж детайли</a>
+            </div>
+        </div>
+
+        <div class="property-card">
+            <img src="Images/house.png" alt="Имот">
+            <div class="property-info">
+                <h3>Къща с двор</h3>
+                <p>Пловдив</p>
+                <span class="price">320 000 €</span>
+                <a href="Pages/property-details-2.html" class="btn-primary">Виж детайли</a>
+            </div>
+        </div>
+
+        <div class="property-card">
+            <img src="Images/ofice.png" alt="Имот">
+            <div class="property-info">
+                <h3>Модерен офис</h3>
+                <p>София, Център</p>
+                <span class="price">180 000 €</span>
+                <a href="Pages/property-details-3.html" class="btn-primary">Виж детайли</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-column">
+            <h3>EliteEstate.bg</h3>
+            <p>Луксозни имоти за изискан живот.</p>
+        </div>
+
+        <div class="footer-column">
+            <h4>Навигация</h4>
+            <ul>
+                <li><a href="#">Продай имот</a></li>
+                <li><a href="#">Търси имот</a></li>
+                <li><a href="#">Ново строителство</a></li>
+                <li><a href="#">За нас</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Контакти</h4>
+            <p>📍 София, България</p>
+            <p>📞 +359 888 123 456</p>
+            <p>✉️ info@eliteestate.bg</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 EliteEstate.bg — Всички права запазени
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="JavaSript/location-select.js"></script>
+
+</body>
+</html>

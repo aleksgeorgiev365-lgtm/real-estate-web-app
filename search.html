@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>Резултати | EliteEstate.bg</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+  
+  <style>
+    /* Стиловете си остават същите */
+    .properties-section { padding: 40px 60px; min-height: 60vh; }
+    .properties-header { text-align: center; margin-bottom: 50px; }
+    .properties-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; padding-bottom: 60px; }
+    .property-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: transform 0.3s ease; position: relative; display: flex; flex-direction: column; }
+    .property-card:hover { transform: translateY(-8px); }
+    .property-tag { position: absolute; top: 15px; left: 15px; background: rgba(192, 0, 0, 0.9); color: #fff; padding: 6px 12px; font-size: 13px; border-radius: 6px; font-weight: bold; z-index: 2; }
+    .property-card img { width: 100%; height: 240px; object-fit: cover; }
+    .property-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+    .price { color: #b00020; font-weight: 800; font-size: 22px; margin-top: auto; display: block; margin-bottom: 15px; }
+    .no-results { grid-column: 1 / -1; text-align: center; padding: 60px; background: #f9f9f9; border-radius: 12px; }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo"><a href="index.html" class="logo-link">EliteEstate.bg</a></div>
+  <nav class="nav-menu">
+    <ul>
+      <li><a href="index.html">Начало</a></li>
+      <li><a href="Pages/client-profile.html">Клиент</a></li>
+      <li><a href="Pages/broker-profile.html">Брокер</a></li>
+      <li><a href="Pages/login.html">Вход</a></li>
+    </ul>
+  </nav>
+  <div class="header-buttons">
+    <a href="Pages/add-property.html" class="btn-post">Обяви имот</a>
+    <span class="language">BG</span>
+  </div>
+</header>
+
+<section class="properties-section">
+  <div class="properties-header">
+    <h2 id="resultsTitle">Търси имот</h2>
+    <p id="resultsSubtitle">Зареждане...</p>
+  </div>
+  <div class="properties-grid" id="resultsGrid"></div>
+</section>
+
+<footer class="footer">
+  <div class="footer-bottom">© 2026 EliteEstate.bg</div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    
+    const locationsData = {
+        "София": ["Център", "Лозенец", "Младост", "Люлин", "Витоша"],
+        "Пловдив": ["Център", "Тракия", "Кършияка", "Стария град"],
+        "Варна": ["Център", "Морска градина", "Аспарухово", "Виница"],
+        "Бургас": ["Център", "Лазур", "Меден рудник", "Сарафово"]
+    };
+
+    // Генериране на 35 снимки
+    const images = [];
+    for (let i = 1; i <= 35; i++) {
+        images.push(`Images/Properties/p${i}.jpg`);
+    }
+
+    const types = ["Апартамент", "Къща", "Офис", "Мезонет", "Студио", "Вила"];
+    const adjectives = ["Луксозен", "Слънчев", "Просторен", "Модерен", "Уютен", "Елегантен", "Панорамен"];
+
+    function getRandomPrice(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+    let allProperties = [];
+    let imgCounter = 0;
+
+    for (let city in locationsData) {
+        locationsData[city].forEach(district => {
+            for (let i = 1; i <= 5; i++) {
+                const typeIndex = Math.floor(Math.random() * types.length);
+                const adjIndex = Math.floor(Math.random() * adjectives.length);
+                
+                const imgPath = images[imgCounter % images.length];
+                imgCounter++;
+
+                const priceNum = getRandomPrice(60, 650) * 1000;
+                const title = `${adjectives[adjIndex]} ${types[typeIndex]}`;
+                const locationStr = `${city}, ${district}`;
+                const priceStr = `${priceNum.toLocaleString()} €`;
+                const typeStr = types[typeIndex];
+
+                const detailLink = `Pages/details-template.html?title=${encodeURIComponent(title)}&location=${encodeURIComponent(locationStr)}&price=${encodeURIComponent(priceStr)}&img=${encodeURIComponent(imgPath)}&type=${encodeURIComponent(typeStr)}`;
+
+                allProperties.push({
+                    title: title,
+                    city: city,
+                    district: district,
+                    price: priceStr,
+                    image: imgPath,
+                    type: typeStr,
+                    link: detailLink
+                });
+            }
+        });
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const selectedCity = params.get("city");
+    const selectedDistrict = params.get("district");
+
+    const titleEl = document.getElementById("resultsTitle");
+    const subtitleEl = document.getElementById("resultsSubtitle");
+    const gridEl = document.getElementById("resultsGrid");
+
+    if (selectedCity) {
+        titleEl.textContent = `Имоти в ${selectedCity}`;
+        if (selectedDistrict) titleEl.textContent += `, кв. ${selectedDistrict}`;
+        subtitleEl.textContent = `Намерени предложения`;
+    }
+
+    const filteredResults = allProperties.filter(p => {
+        if (!selectedCity) return true;
+        const cityMatch = p.city === selectedCity;
+        const districtMatch = !selectedDistrict || p.district === selectedDistrict;
+        return cityMatch && districtMatch;
+    });
+
+    if (filteredResults.length === 0) {
+        gridEl.innerHTML = `<div class="no-results"><h3>Няма намерени имоти</h3><a href="index.html" class="btn-primary" style="margin-top:20px; display:inline-block;">Ново търсене</a></div>`;
+    } else {
+        gridEl.innerHTML = "";
+        
+        filteredResults.forEach(p => {
+            gridEl.innerHTML += `
+                <div class="property-card">
+                    <span class="property-tag">${p.type}</span>
+                    <img src="${p.image}" alt="${p.title}" onerror="this.src='Images/house.png'">
+                    <div class="property-info">
+                        <h3>${p.title}</h3>
+                        <p>📍 ${p.city}, ${p.district}</p>
+                        <span class="price">${p.price}</span>
+                        <a href="${p.link}" class="btn-primary" style="text-align:center;">Виж детайли</a>
+                    </div>
+                </div>
+            `;
+        });
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<title>Луксозен апартамент</title>
+
+<!-- Global CSS -->
+<link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">
+    <a href="../index.html" class="logo-link">EliteEstate.bg</a>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- Gallery -->
+  <div>
+    <div class="gallery-main">
+      <img id="mainImage"
+           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+           alt="main">
+    </div>
+
+    <div class="gallery-thumbs">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+           onclick="changeImage(this.src)">
+      <img src="https://images.unsplash.com/photo-1560185127-6a8c5c3a7f29"
+           onclick="changeImage(this.src)">
+      <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c"
+           onclick="changeImage(this.src)">
+    </div>
+  </div>
+
+  <!-- Details -->
+  <div class="details">
+    <h1>Луксозен апартамент</h1>
+    <div class="location">София, Лозенец</div>
+    <div class="price">250 000 €</div>
+    <p>
+      Луксозен имот с отлична локация, модерно изпълнение и високо качество
+      на строителството.
+    </p>
+    <button class="btn-primary">Свържи се с брокер</button>
+  </div>
+
+</div>
+
+<script>
+  function changeImage(src) {
+    document.getElementById("mainImage").src = src;
+  }
+</script>
+
+</body>
+</html>

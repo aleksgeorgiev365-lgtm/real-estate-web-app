@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация | EliteEstate.bg</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+
+<!-- ===== HEADER / NAVIGATION ===== -->
+<header class="header">
+
+    <div class="logo">
+        <a href="../index.html" class="logo-link">EliteEstate.bg</a>
+    </div>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="../index.html">Начало</a></li>
+            <li><a href="client-profile.html">Клиент</a></li>
+            <li><a href="broker-profile.html">Брокер</a></li>
+            <li><a href="login.html">Вход</a></li>
+            <li><a href="register.html" class="active">Регистрация</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-buttons">
+        <a href="add-property.html" class="btn-post">Обяви имот</a>
+        <span class="language">BG</span>
+    </div>
+
+</header>
+
+<!-- ===== REGISTER SECTION ===== -->
+<section class="auth-wrapper">
+
+    <div class="auth-tabs">
+        <a href="login.html">Вход</a>
+        <a href="register.html" class="active">Нова регистрация</a>
+    </div>
+
+    <div class="auth-box">
+
+        <p class="auth-info">
+            Тази регистрация е предназначена за лица (физически или юридически),
+            които <strong>НЕ СЕ ЗАНИМАВАТ</strong> с търговия с недвижими имоти
+            по занятие.
+        </p>
+
+        <form class="auth-form">
+
+            <label>E-mail</label>
+            <input type="email" placeholder="E-mail">
+
+            <small>
+                На посочения E-mail ще получите линк за потвърждение на регистрацията.
+                Имейл адресът не се показва в сайта.
+            </small>
+
+            <label>Парола</label>
+            <input type="password" placeholder="Парола">
+
+            <label>Повтори паролата</label>
+            <input type="password" placeholder="Повтори паролата">
+
+            <div class="auth-checkbox">
+                <input type="checkbox" id="terms">
+                <label for="terms">
+                    Съгласен съм с
+                    <a href="#">Общите условия</a> и
+                    <a href="#">Политика за защита на личните данни</a>
+                </label>
+            </div>
+
+            <button type="submit">Регистрация с E-mail</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+</body>
+</html>

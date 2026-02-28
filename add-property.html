@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Добави нов имот | EliteEstate.bg</title>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+
+<!-- ===== HEADER / NAVIGATION ===== -->
+<header class="header">
+
+    <div class="logo">
+        <a href="../index.html" class="logo-link">EliteEstate.bg</a>
+    </div>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="../index.html">Начало</a></li>
+            <li><a href="client-profile.html">Клиент</a></li>
+            <li><a href="broker-profile.html">Брокер</a></li>
+            <li><a href="login.html">Вход</a></li>
+            <li><a href="register.html">Регистрация</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-buttons">
+        <a href="add-property.html" class="btn-post">Обяви имот</a>
+        <span class="language">BG</span>
+    </div>
+
+</header>
+
+<!-- ===== ADD PROPERTY FORM ===== -->
+<main class="form-page">
+
+    <h1 class="form-title">Добави нов имот</h1>
+
+    <form class="property-form">
+
+        <div class="form-grid">
+
+            <label>
+                Заглавие на имота
+                <input type="text" placeholder="Луксозен апартамент">
+            </label>
+
+            <label>
+                Тип имот
+                <select>
+                    <option>Избери тип</option>
+                    <option>Апартамент</option>
+                    <option>Къща</option>
+                    <option>Офис</option>
+                </select>
+            </label>
+
+            <label>
+                Град
+                <input type="text" placeholder="София">
+            </label>
+
+            <label>
+                Цена (€)
+                <input type="number" placeholder="250000">
+            </label>
+
+            <label class="full-width">
+                Описание
+                <textarea rows="4" placeholder="Кратко описание на имота"></textarea>
+            </label>
+
+            <label class="full-width">
+                Снимка (URL)
+                <input type="text" placeholder="https://...">
+            </label>
+
+        </div>
+
+        <button type="submit" class="btn-primary">
+            Добави имот
+        </button>
+
+    </form>
+
+</main>
+
+</body>
+</html>
